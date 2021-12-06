@@ -29,3 +29,11 @@ export const MEMORY_CLEAR = 'MEMORY_CLEAR';
 export const memAdd = () => {
     return({type: MEMORY_ADD});
 };
+
+export const memApply = () => {
+    return({type: MEMORY_APPLY});
+};
+
+export const memClear = () => {
+    return({type: MEMORY_CLEAR});
+};

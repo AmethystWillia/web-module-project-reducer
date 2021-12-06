@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 import reducer, { initialState } from '../reducers';
 import { 
   addOne, applyNumber, changeOperator, clearDisplay,
-  memAdd
+  memAdd, memApply
  } from '../actions';
 
 import './App.css';
@@ -35,6 +35,10 @@ function App() {
     dispatch(memAdd());
   };
 
+  const handleMemApply = () => {
+    dispatch(memApply());
+  };
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -53,7 +57,7 @@ function App() {
             
             <div className="row">
               <CalcButton onClick={handleMemAdd} value={"M+"}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton onClick={handleMemApply} value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
 

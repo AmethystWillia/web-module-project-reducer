@@ -51,6 +51,18 @@ const reducer = (state, action) => {
                 ...state,
                 memory: state.total
             });
+
+            case(MEMORY_APPLY):
+            return ({ 
+                ...state, 
+                total: calculateResult(state.total, state.memory, state.operation)
+            });
+
+            case(MEMORY_CLEAR):
+            return ({
+                ...state,
+                memory: 0
+            });
             
         default:
             return state;
