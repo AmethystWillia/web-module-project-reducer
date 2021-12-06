@@ -3,7 +3,7 @@ import React, { useReducer } from 'react';
 import reducer, { initialState } from '../reducers';
 import { 
   addOne, applyNumber, changeOperator, clearDisplay,
-  memAdd, memApply
+  memAdd, memApply, memClear
  } from '../actions';
 
 import './App.css';
@@ -39,6 +39,10 @@ function App() {
     dispatch(memApply());
   };
 
+  const handleMemClear = () => {
+    dispatch(memClear());
+  };
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -58,25 +62,25 @@ function App() {
             <div className="row">
               <CalcButton onClick={handleMemAdd} value={"M+"}/>
               <CalcButton onClick={handleMemApply} value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick={handleMemClear} value={"MC"}/>
             </div>
 
             <div className="row">
               <CalcButton onClick={handleApplyNum} value={1}/>
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton onClick={handleApplyNum} value={2}/>
+              <CalcButton onClick={handleApplyNum} value={3}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton onClick={handleApplyNum} value={4}/>
+              <CalcButton onClick={handleApplyNum} value={5}/>
+              <CalcButton onClick={handleApplyNum} value={6}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton onClick={handleApplyNum} value={7}/>
+              <CalcButton onClick={handleApplyNum} value={8}/>
+              <CalcButton onClick={handleApplyNum} value={9}/>
             </div>
 
             <div className="row">
