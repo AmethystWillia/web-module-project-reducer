@@ -19,7 +19,7 @@ function App() {
   };
 
   const handleApplyNum = (num) => {
-    dispatch(applyNumber(num.target.value));
+    dispatch(applyNumber(Number(num.target.value)));
   };
 
   const handleChangeOp = (operator) => {
