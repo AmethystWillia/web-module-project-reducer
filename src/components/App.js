@@ -1,7 +1,10 @@
 import React, { useReducer } from 'react';
 
 import reducer, { initialState } from '../reducers';
-import { addOne, applyNumber, changeOperator, clearDisplay } from '../actions';
+import { 
+  addOne, applyNumber, changeOperator, clearDisplay,
+  memAdd
+ } from '../actions';
 
 import './App.css';
 
@@ -27,6 +30,11 @@ function App() {
     dispatch(clearDisplay());
   };
 
+  // --------
+  const handleMemAdd = () => {
+    dispatch(memAdd());
+  };
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -44,7 +52,7 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
+              <CalcButton onClick={handleMemAdd} value={"M+"}/>
               <CalcButton value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
